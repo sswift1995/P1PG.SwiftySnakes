@@ -70,7 +70,7 @@ if (snakeBody.length){
     context.fillRect(snakeyX, snakeyY, blockSize, blockSize);
     for (let i = 0; i < snakeBody.length; i++) { 
         context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize,blockSize);
-        newFunction();
+        
     }
 
 
