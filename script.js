@@ -5,7 +5,7 @@ var cols = 20;
 var board;
 var context;
 var drawScore;
-
+var restartGame;
 //Snake head
 var snakeyX = blockSize * 3;
 var snakeyY = blockSize * 3;
