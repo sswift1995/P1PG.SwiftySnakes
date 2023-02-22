@@ -13,11 +13,38 @@
     <h1> Swifty Snakes</h1>
     <p id="p1">Score:<span id="score"></span></p>
     <canvas id="board"></canvas>
-    <audio id="audio" src="http://music.mp3"></audio>
+   
+    <section>
+        <button id="retry" type="button">RESTART</button>
+      </section>
+      
 
     <h2>Background Music</h2>
 
     <audio id="audio" autoplay loop  controls src="Assets/Sound Bytes/05. Bgm In Battle 5d 3.mp3"></audio>
+    <audio id="game Music" src="Assets/Sound Bytes/05. Bgm In Battle 5d 3.mp3" autoplay="true" hidden="true" loop="false"/>
+<script>
+var play = true;
+
+var myAudio = document.getElementById("game Music");
+
+function onKeyDown(event) {
+        switch (event.keyCode) {
+            case 32: //SpaceBar                    
+                if (play) {
+                    myAudio.pause();
+                    play = false;
+                } else {
+                    myAudio.play();
+                    play = true;
+                }
+                break;
+        }
+  return false;
+}
+
+window.addEventListener("keydown", onKeyDown, false);
+</script>
 
 </body>
 </html>

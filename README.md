@@ -26,4 +26,11 @@ https://images.google.com/
 
 https://downloads.khinsider.com/game-soundtracks/album/yu-gi-oh-cross-duel-android-ios-gamerip-2022/05.%2520Bgm%2520In%2520Battle%25205d%25203.mp3
 
+# Looping Music player:
+
+https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984#:~:text=The%20simplest%20way%20to%20add,starts%20playing%20the%20current%20audio.
+
+# Play Pause w/ Space Bar function:
+
+https://stackoverflow.com/questions/16385525/play-and-pause-sound-with-spacebar
 

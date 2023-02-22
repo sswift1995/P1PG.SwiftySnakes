@@ -1,7 +1,7 @@
 //board
-var blockSize = 25;
-var rows = 25;
-var cols = 25;
+var blockSize = 20;
+var rows = 20;
+var cols = 20;
 var board;
 var context;
 var drawScore;
@@ -71,6 +71,7 @@ if (snakeBody.length){
     for (let i = 0; i < snakeBody.length; i++) { 
         context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize,blockSize);
         
+        
     }
 
 
@@ -78,6 +79,8 @@ if (snakeBody.length){
 if (snakeyX < 0 || snakeyX > cols*blockSize || snakeyY < 0 || snakeyY > rows*blockSize) {
     youLose = true;
     alert("Game Over");
+    alert ("High Score:");
+    alert("Play Again?");
 }
 
 for (let i = 0; i < snakeBody.length; i++) {
@@ -87,20 +90,16 @@ for (let i = 0; i < snakeBody.length; i++) {
     }
 }
 
-    function newFunction() {
-        if (snakeyX === munchyX && snakeyY === munchyY) {
-            snakeBody++ +
-                score; 1;
-        }
-    }
 }
 
 function drawScore(){
     context.fillStyle = "white";
     context.font = "10px Verdana";
-    context.fillText("Score" + score, board.width-50, 10);
+    context.fillText("Score" + score, 5, 20);
+    drawScore.display;
+    drawScore();
 }
-
+ 
 //Function controls Arrows
 function changeDirection(s){
     if (s.code == "ArrowUp" && velocityY != 1){
@@ -127,3 +126,52 @@ function placeFood() {
     munchyX = Math.floor(Math.random() * cols) * blockSize;
     munchyY = Math.floor(Math.random()* rows) * blockSize;
 }
+
+//snakeBody collision function
+function collision(head, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (snakeyX == array[i].x && snakeyY == array[i].y) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// Draw function for canvas
+
+function draw() {
+
+    for (var i = 0; i < snakeyX.length; i++) {
+        ctx.fillStyle = "white";
+        ctx.fillRect(snakeyX[i].x, snakeyX[i].y, blockSize, blockSize);
+    }
+}
+
+
+
+
+var updatehead = {
+    x: snakeyX,
+    y: snakeyY
+}
+
+ //game over rule
+
+ if (snakeyX < blockSize || snakeyX > 17 * blockSize|| snakeyY < 3 * blockSize || snakeyY > 17 * blockSize || collision(updatehead, snakeBody)) {
+    clearInterval(game);
+
+     snakeyX.unshift(updatehead);
+}
+// Call draw function
+
+let game = setInterval(draw, 100);
+
+// Add event listener to button
+document.getElementById("retry").addEventListener("click", restartGame);
+
+// Define function to handle button click event
+function restartGame() {
+  // Perform actions to restart game
+  console.log("Game restarted!");
+}
+
