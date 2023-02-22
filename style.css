@@ -1,4 +1,18 @@
 body{
+        background-image: url("Assets/Graphics/snake\ background.png");
+        background-repeat:  repeat;
+        background-color: #cccccc;
+      
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+}
+
+h1 {
+    color: rgb(255, 6, 6);
+}
+
+p{
+    color: red;
+    
+
 }
