@@ -5,46 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swifty Snakes</title>
-    <script src="script.js"></script>
+   
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <h1> Swifty Snakes</h1>
-    <p id="p1">Score:<span id="score"></span></p>
+    <div id="score">Score: 0</div>
     <canvas id="board"></canvas>
-   
-    <section>
-        <button id="retry" type="button">RESTART</button>
-      </section>
+    <button id="restart-button">Restart</button>
+     
       
-
+   
     <h2>Background Music</h2>
-
+    
     <audio id="audio" autoplay loop  controls src="Assets/Sound Bytes/05. Bgm In Battle 5d 3.mp3"></audio>
     <audio id="game Music" src="Assets/Sound Bytes/05. Bgm In Battle 5d 3.mp3" autoplay="true" hidden="true" loop="false"/>
 <script>
-var play = true;
 
-var myAudio = document.getElementById("game Music");
-
-function onKeyDown(event) {
-        switch (event.keyCode) {
-            case 32: //SpaceBar                    
-                if (play) {
-                    myAudio.pause();
-                    play = false;
-                } else {
-                    myAudio.play();
-                    play = true;
-                }
-                break;
-        }
-  return false;
-}
-
-window.addEventListener("keydown", onKeyDown, false);
 </script>
-
+<script src="script.js"></script>
 </body>
 </html>

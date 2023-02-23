@@ -1,22 +1,48 @@
 body{
         background-image: url("Assets/Graphics/snake\ background.png");
+       
         background-repeat:  repeat;
         background-color: #cccccc;
+       
       
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
 
 h1 {
-    color: rgb(255, 6, 6);
+    color: rgb(4, 182, 63);
 }
 
-p{
-    color: red;
-    
+div {
+    color: rgb(5, 158, 48); 
+    font-weight: bolder;
+    text-align: center;
+    font-size: large;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-width: 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-right: 570px;
+    margin-left: 590px;
+    box-sizing: border-box;
+    border: 2px solid;
+   
 
 }
 
 h2{
-    color: red;
+    color: rgb(3, 182, 51);
 }
+
+background image{
+    opacity: 0.5;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+  }
