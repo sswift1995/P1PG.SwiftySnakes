@@ -34,3 +34,8 @@ https://noaheakin.medium.com/adding-sound-to-your-js-web-app-f6a0ca728984#:~:tex
 
 https://stackoverflow.com/questions/16385525/play-and-pause-sound-with-spacebar
 
+# Implementing the score code:
+https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Track_the_score_and_win
+
+
+
