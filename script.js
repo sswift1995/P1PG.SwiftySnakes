@@ -95,16 +95,17 @@ function startGame() {
     }
 
     drawScore();
-    context.fillStyle = "black";
-    context.fillRect(0, 0, board.width, board.height);
+    context.fillStyle = "black"; // color of the game board
+    context.fillRect(0, 0, board.width, board.height); //height/width of the gameboard
 
-    context.fillStyle = "pink";
-    context.fillRect(munchyX, munchyY, blockSize, blockSize);
+    context.fillStyle = "pink"; // The snakes food
+    context.fillRect(munchyX, munchyY, blockSize, blockSize); // where the food jumps too.
 
+    // snake growth if statement
     if (snakeyX == munchyX && snakeyY == munchyY) {
-        snakeBody.push([munchyX, munchyY]);
-        score += 2;
-        placeFood();
+        snakeBody.push([munchyX, munchyY]); 
+        score += 2; // adding of the score calculation
+        placeFood();// where to put the food
     }
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
@@ -114,9 +115,9 @@ function startGame() {
         snakeBody[0] = [snakeyX, snakeyY];
     }
    
-    context.fillStyle = "teal";
-    snakeyX += velocityX * blockSize;
-    snakeyY += velocityY * blockSize;
+    context.fillStyle = "teal"; //snake character
+    snakeyX += velocityX * blockSize; //bigger the snake the faster it goes
+    snakeyY += velocityY * blockSize;//bigger the snake the faster it goes
     context.fillRect(snakeyX, snakeyY, blockSize, blockSize);
     for (let i = 0; i < snakeBody.length; i++) {
         context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
@@ -129,19 +130,17 @@ function startGame() {
 
 
     if (snakeyX < 0 || snakeyX > cols * blockSize || snakeyY < 0 || snakeyY > rows * blockSize) {
-        youLose = true;
-        // Stop ongoing game loop
-        updateScore();
-        clearInterval(currentGame);
+        youLose = true; //Stop ongoing game loop
+        updateScore(); //update the score   
+        clearInterval(currentGame); //Clear the recent game
 
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeyX == snakeBody[i][0] && snakeyY == snakeBody[i][1]) {
-            youLose = true;
-            // Stop ongoing game loop
-            updateScore();
-            clearInterval(currentGame);
+            youLose = true; // Stop ongoing game loop
+            updateScore(); //update the score
+            clearInterval(currentGame); // Clear the recent game
         }
     }
 
