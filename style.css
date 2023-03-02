@@ -23,7 +23,7 @@ canvas {
     box-sizing: border-box;
     box-shadow: 1px 1px #d9d9d9;
 	color: green;
-    position: fixed;
+    position: relative;
 			top: 40%;
 			left: 50%;
 			transform: translate(-50%, -50%);
@@ -43,24 +43,21 @@ div {
     border-style: solid;
     border-color: whitesmoke;
     border-width: 1px;
-    padding-left: 1px;
-    padding-right: 1px;
-    margin-right: 580px;
-    margin-left: 595px;
+    padding: 1px;
+    margin: 20px;
     box-sizing: border-box;
     border: 2px solid;
    
 
 }
-div1 {
+
+#controls{
     color: rgb(5, 158, 48); 
     font-weight: bolder;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-    border-bottom: 1px solid #ccc;
+    padding: 10px;
     font-size: 0.9em;
-    text-align: justify;
-    box-sizing: border-box;
+    text-align: center;
+    box-sizing: border-box; 
 }
 
 
