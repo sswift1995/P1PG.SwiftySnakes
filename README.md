@@ -24,16 +24,16 @@ Reference/Cite websites:
 # This link was partial coding of making objects move:
 Mislavoo7Mislavoo7                    55711 gold badge55 silver badges1515 bronze badges, et al. “How to Make Object Move in Js?” Stack Overflow, 1 July 1961, https://stackoverflow.com/questions/25352760/how-to-make-object-move-in-js. 
 
- # Background resournces: 
+ # Background Resources: 
 
 CSS Background-Color Property, https://www.w3schools.com/cssref/pr_background-color.php. 
 
 # Creating the window with context style:
 
-https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill
+“CanvasRenderingContext2D.Fill() - Web Apis: MDN.” Web APIs | MDN, https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill. 
 
 
-# Game Music soundbyte:
+# game Music Soundbyte:
 
 “R/Referral - Khinsider: Download Video Game Soundtracks. and to Benefit Me, All You Have to Do Is Visit the Website via the Link.” Reddit, https://www.reddit.com/r/Referral/comments/ltzpnj/khinsider_download_video_game_soundtracks_and_to/. 
 

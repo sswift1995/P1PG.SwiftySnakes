@@ -39,42 +39,36 @@ function startGame() {
 }
 
 
-var play = true;
-
 
 // Calculating Score function
 
-function drawScore() {
-    context.fillStyle = "white";
-    context.font = "10px Verdana";
-    context.fillText("Score" + score, 5, 20);
-    var scoreElement = document.getElementById("score"); // calling the element to score
-    drawScore.display;
+    function drawScore() {
     updateScore();// update current score
-
 }
-function updateScore() {
+
+    function updateScore() {
     var scoreElement = document.getElementById("score"); // calling the element to score
     if (youLose === false) {
-        scoreElement.innerHTML = "Score: " + score;
+       scoreElement.innerHTML = "Score: " + score;
     }
     else {
-        scoreElement.innerHTML = " GAME OVER <br> Your Score: " + score;
+      scoreElement.innerHTML = " GAME OVER <br> Your Score: " + score;
+        }    
     }
-}
-//Calling the movement 
 
-window.onload = function () {
-    board = document.getElementById("board");
-    board.height = rows * blockSize;
-    board.width = cols * blockSize;
-    context = board.getContext("2d"); //drawing on the board
+    //Calling the movement 
 
-    snakeyX = blockSize * 3;
-    snakeyY = blockSize * 3;
-
-    placeFood();
-
+    window.onload = function () {
+        board = document.getElementById("board");
+        board.height = rows * blockSize;
+        board.width = cols * blockSize;
+        context = board.getContext("2d"); //drawing on the board
+    
+        snakeyX = blockSize * 3;
+        snakeyY = blockSize * 3;
+    
+         placeFood();
+    
     document.addEventListener("keyup", changeDirection);
     // Add event listener to button
     document.getElementById("restart-button").addEventListener("click", restartGame);
@@ -97,7 +91,7 @@ function startGame() {
 
     // snake growth if statement
     if (snakeyX == munchyX && snakeyY == munchyY) {
-        snakeBody.push([munchyX, munchyY]);
+        snakeBody.push([munchyX, munchyY]); 
         score += 2; // adding of the score calculation
         placeFood();// where to put the food
     }
@@ -108,7 +102,7 @@ function startGame() {
     if (snakeBody.length) {
         snakeBody[0] = [snakeyX, snakeyY];
     }
-
+   
     context.fillStyle = "teal"; //snake character
     snakeyX += velocityX * blockSize; //bigger the snake the faster it goes
     snakeyY += velocityY * blockSize;//bigger the snake the faster it goes
@@ -140,6 +134,8 @@ function startGame() {
 
 }
 
+
+
 //Function controls Arrows
 function changeDirection(s) {
     if (s.code == "ArrowUp" && velocityY != 1) {
@@ -160,6 +156,7 @@ function changeDirection(s) {
     }
 }
 
+
 // function placing food
 function placeFood() {
     munchyX = Math.floor(Math.random() * cols) * blockSize;
@@ -167,8 +164,8 @@ function placeFood() {
 }
 
 //snakeBody collision function
-function collision(head, array) {
-    for (let i = 0; i < array.length; i++) {
+    function collision(head, array) {
+        for (let i = 0; i < array.length; i++) {
         if (snakeyX == array[i].x && snakeyY == array[i].y) {
             return true;
         }
@@ -177,6 +174,7 @@ function collision(head, array) {
 }
 
 // Draw function for canvas
+
 function draw() {
     for (var i = 0; i < snakeyX.length; i++) {
         ctx.fillStyle = "white";
@@ -184,37 +182,40 @@ function draw() {
     }
 }
 
+
 // Define function to handle button click event
 function restartGame() {
     console.log("restarting ...")
     // Reset score
     score = 0;
     youLose = false;
+    
 
-    velocityX = 0;
-    velocityY = 0;
-    snakeyX = blockSize * 3;
-    snakeyY = blockSize * 3;
-  
+    velocityX = 0; //reseting the x axis movement
+    velocityY = 0; // reseting the y axis movement
+    snakeyX = blockSize * 3; //assigning snake head on X axis to mulitply by 3 
+    snakeyY = blockSize * 3; // assigning snake head on y axis to mulitply by 3 
+
     snakeBody = []
-
+    
     draw()
     drawScore()
     placeFood()
-
+    
     clearInterval(currentGame); // Stop the current interval
     currentGame = setInterval(startGame, 100); // Start a new interval
-
+    
     console.log("Game restarted!");
 }
 
 // Sound bite for game
 
 var myAudio = document.getElementById("game Music");
+var play = true;
 
 function onKeyDown(event) {
     switch (event.keyCode) {
-        case 32: //SpaceBar                    
+        case 32: // SpaceBar                    
             if (play) {
                 myAudio.pause();
                 play = false;
