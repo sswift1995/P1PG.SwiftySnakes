@@ -33,9 +33,9 @@ var scoreElement;
 
 
 function startGame() {
-	var gameScreen = document.getElementById("game-screen");
-	gameScreen.style.display = "block";
-	// Initialize your game here
+    var gameScreen = document.getElementById("game-screen");
+    gameScreen.style.display = "block";
+    // Initialize your game here
 }
 
 
@@ -55,15 +55,12 @@ function drawScore() {
 }
 function updateScore() {
     var scoreElement = document.getElementById("score"); // calling the element to score
-    if (youLose === false){
+    if (youLose === false) {
         scoreElement.innerHTML = "Score: " + score;
     }
     else {
         scoreElement.innerHTML = " GAME OVER <br> Your Score: " + score;
     }
-    
-    
-    
 }
 //Calling the movement 
 
@@ -76,10 +73,7 @@ window.onload = function () {
     snakeyX = blockSize * 3;
     snakeyY = blockSize * 3;
 
-
     placeFood();
-
-    
 
     document.addEventListener("keyup", changeDirection);
     // Add event listener to button
@@ -103,7 +97,7 @@ function startGame() {
 
     // snake growth if statement
     if (snakeyX == munchyX && snakeyY == munchyY) {
-        snakeBody.push([munchyX, munchyY]); 
+        snakeBody.push([munchyX, munchyY]);
         score += 2; // adding of the score calculation
         placeFood();// where to put the food
     }
@@ -114,7 +108,7 @@ function startGame() {
     if (snakeBody.length) {
         snakeBody[0] = [snakeyX, snakeyY];
     }
-   
+
     context.fillStyle = "teal"; //snake character
     snakeyX += velocityX * blockSize; //bigger the snake the faster it goes
     snakeyY += velocityY * blockSize;//bigger the snake the faster it goes
@@ -146,8 +140,6 @@ function startGame() {
 
 }
 
-
-
 //Function controls Arrows
 function changeDirection(s) {
     if (s.code == "ArrowUp" && velocityY != 1) {
@@ -168,7 +160,6 @@ function changeDirection(s) {
     }
 }
 
-
 // function placing food
 function placeFood() {
     munchyX = Math.floor(Math.random() * cols) * blockSize;
@@ -186,33 +177,34 @@ function collision(head, array) {
 }
 
 // Draw function for canvas
-
 function draw() {
-
     for (var i = 0; i < snakeyX.length; i++) {
         ctx.fillStyle = "white";
         ctx.fillRect(snakeyX[i].x, snakeyX[i].y, blockSize, blockSize);
     }
 }
 
-
 // Define function to handle button click event
 function restartGame() {
-    changeDirection = null; 
     console.log("restarting ...")
     // Reset score
     score = 0;
     youLose = false;
-    snakeyX = blockSize;
-    snakeyY = blockSize;
-   
+
+    velocityX = 0;
+    velocityY = 0;
+    snakeyX = blockSize * 3;
+    snakeyY = blockSize * 3;
+  
+    snakeBody = []
+
     draw()
     drawScore()
     placeFood()
-    
+
     clearInterval(currentGame); // Stop the current interval
     currentGame = setInterval(startGame, 100); // Start a new interval
-    
+
     console.log("Game restarted!");
 }
 
