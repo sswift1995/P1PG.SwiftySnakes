@@ -208,25 +208,3 @@ function restartGame() {
     console.log("Game restarted!");
 }
 
-// Sound bite for game
-
-var myAudio = document.getElementById("game Music");
-var play = true;
-
-function onKeyDown(event) {
-    switch (event.keyCode) {
-        case 32: // SpaceBar                    
-            if (play) {
-                myAudio.pause();
-                play = false;
-            } else {
-                myAudio.play();
-                play = true;
-            }
-            break;
-    }
-    return false;
-}
-
-window.addEventListener("keydown", onKeyDown, false);
-
