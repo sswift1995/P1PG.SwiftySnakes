@@ -1,0 +1,111 @@
+//Define variables
+$primary-color: #007bff;
+$secondary-color: #5bc0de;
+$background-color: #f8f8f8;
+$font-family: 'Arial', sans-serif;
+$font-size-large: 24px;
+$font-size-medium: 16px;
+$border-radius: 4px;
+$spacing-unit: 20px;
+$breakpoint-md: 768px;
+
+//mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin btn-style {
+    border: 2px solid $primary-color;
+    padding: 8px 16px;
+    border-radius: $border-radius;
+    color: #fff;
+    background-color: $primary-color;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+ //functions
+  @function calculate-width($columns) {
+    @return $columns * 100px;
+  }
+  
+  @function random-color() {
+    @return rgb(random(255), random(255), random(255));
+  }
+  @for $i from 1 through 5 {
+    .item-#{$i} {
+      width: calculate-width($i);
+    }
+  }
+  
+  $bg-color: random-color();
+  
+  @import 'header';
+  @import 'card';
+  @import 'buttons';
+
+$theme: 'dark';
+@if $theme != 'light' {
+  @error "Invalid theme specified! Use 'light' or handle the case properly.";
+}
+
+// body{
+//     background-repeat:  repeat;
+//     background-color: #cccccc;
+//     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+//     text-align: center;
+// }
+
+// canvas {
+//     position: center;
+// }
+
+
+
+// h1 {
+//     color: rgb(4, 182, 63);
+// }
+
+// div {
+//     color: rgb(5, 158, 48); 
+//     font-weight: bolder;
+//     text-align: center;
+//     font-size: large;
+//     border-style: solid;
+//     border-color: whitesmoke;
+//     border-width: 1px;
+//     padding: 1px;
+//     margin: 20px;
+//     box-sizing: border-box;
+//     border: 2px solid;
+   
+
+// }
+
+// #controls{
+//     color: rgb(5, 158, 48); 
+//     font-weight: bolder;
+//     padding: 1px;
+//     font-size: 0.9em;
+//     text-align: center;
+//     box-sizing: border-box;  
+// }
+
+
+// h2{
+//     color: rgb(3, 182, 51);
+// }
+
+
+
+// button {
+//     display: block;
+//     margin: 0 auto;
+//     width: 100px;
+//     height: 50px;
+//     font-size: 18px;
+//   }
